@@ -7,16 +7,14 @@ require("dotenv").config();
 const PORT = process.env.PORT || 5000;
 const app = express();
 // cors
-// app.use(cors({ origin: "*" }));
-app.use(cors({
-  origin: 'https://nodemail-email.herokuapp.com'
-}));
+app.use(cors({ origin: "*" }));
+
 app.use("/public", express.static(process.cwd() + "/public")); //make public static
 
 const transporter = nodemailer.createTransport({
   host: 'smtp-mail.outlook.com',
   port: Number(process.env.PORT),
-  secure: true,
+  secure: false,
   auth: {
     user: process.env.EMAIL,
     pass: process.env.PASS,
