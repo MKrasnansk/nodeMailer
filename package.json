@@ -7,6 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
+  "keywords": [
+    "heroku"
+  ],
   "author": "Victoria Lo",
   "license": "ISC",
   "dependencies": {
@@ -19,6 +22,6 @@
     "nodemon": "^2.0.4"
   },
   "engines": {
-    "node": "12.14.1"
+    "node": "^16.6.1"
   }
 }
