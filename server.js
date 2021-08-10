@@ -5,9 +5,6 @@ const multiparty = require("multiparty");
 require("dotenv").config();
 
 const PORT = process.env.PORT || 5000;
-// const PORT =  5000;
-
-// instantiate an express app
 const app = express();
 // cors
 app.use(cors({ origin: "*" }));
@@ -27,7 +24,6 @@ const transporter = nodemailer.createTransport({
   }
 });
 
-// verify connection configuration
 transporter.verify(function (error, success) {
   if (error) {
     console.log(error);
