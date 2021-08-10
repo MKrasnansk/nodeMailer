@@ -4,7 +4,8 @@ const nodemailer = require("nodemailer");
 const multiparty = require("multiparty");
 require("dotenv").config();
 
-const PORT = process.env.PORT || 5000;
+// const PORT = process.env.PORT || 5000;
+const PORT =  5000;
 
 // instantiate an express app
 const app = express();
@@ -14,11 +15,16 @@ app.use(cors({ origin: "*" }));
 app.use("/public", express.static(process.cwd() + "/public")); //make public static
 
 const transporter = nodemailer.createTransport({
-  service: "hotmail",
+  host: 'smtp-mail.outlook.com',
+  port: Number(process.env.PORT),
+  secure: false,
   auth: {
     user: process.env.EMAIL,
     pass: process.env.PASS,
   },
+  tls: {
+    rejectUnauthorized: false
+  }
 });
 
 // verify connection configuration
