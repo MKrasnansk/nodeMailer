@@ -7,7 +7,7 @@ require("dotenv").config();
 const PORT = process.env.PORT || 5000;
 const app = express();
 // cors
-app.use(cors({ origin: "*" }));
+app.use(cors());
 
 app.use("/public", express.static(process.cwd() + "/public")); //make public static
 
