@@ -7,23 +7,21 @@ require("dotenv").config();
 const PORT = process.env.PORT || 5000;
 const app = express();
 // cors
-app.use (cors ({ 
-  credentials: true, 
-}));
+app.use(cors());
 
 app.use("/public", express.static(process.cwd() + "/public")); //make public static
 
 const transporter = nodemailer.createTransport({
-  host: 'smtp-mail.outlook.com',
-  // port: Number(process.env.PORT),
+  host: "smtp-mail.outlook.com",
+  port: Number(process.env.PORT),
   // secure: false,
   auth: {
     user: process.env.EMAIL,
     pass: process.env.PASS,
   },
-  // tls: {
-  //   rejectUnauthorized: false
-  // }
+  tls: {
+    rejectUnauthorized: false
+  }
 });
 
 transporter.verify(function (error, success) {
