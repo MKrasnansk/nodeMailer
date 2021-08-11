@@ -13,8 +13,8 @@ app.use("/public", express.static(process.cwd() + "/public")); //make public sta
 
 const transporter = nodemailer.createTransport({
   host: "smtp-mail.outlook.com",
-  port: process.env.PORT,
-  secure: true,
+  // port: process.env.PORT,
+  // secure: true,
   auth: {
     user: process.env.EMAIL,
     pass: process.env.PASS,
