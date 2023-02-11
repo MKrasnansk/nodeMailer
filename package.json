@@ -19,7 +19,7 @@
     "multiparty": "^4.2.2",
     "nodejs-nodemailer-outlook": "^1.2.4",
     "nodemailer": "^6.4.11",
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.20"
   },
   "engines": {
     "node": "14.x"
